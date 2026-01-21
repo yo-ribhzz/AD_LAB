@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Integer</title>
+</head>
+<body>
+
+    <h3>Enter an Integer</h3>
+
+    <input type="number" id="numInput" placeholder="Enter an integer">
+    <button onclick="displayValue()">Display</button>
+
+    <p id="result"></p>
+
+    <script>
+        function displayValue() {
+            var value = document.getElementById("numInput").value;
+            document.getElementById("result").innerText = "You entered: " + value;
+        }
+    </script>
+
+</body>
+</html>

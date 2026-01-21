@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id="num" placeholder="Enter number">
+<button onclick="check()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function check() {
+    let n = num.value;
+    result.innerText = (n && !isNaN(n) && n === n.split('').reverse().join(''))
+        ? n + " is Palindrome"
+        : n + " is Not Palindrome";
+}
+</script>
+
+</body>
+</html>

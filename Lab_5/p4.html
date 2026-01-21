@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Builder and Search</title>
+</head>
+<body>
+
+    <h2>Array Builder & Search</h2>
+
+    <h3>Add Value</h3>
+    <input type="text" id="addValue" placeholder="Enter value">
+    <button onclick="addToArray()">Add</button>
+
+    <h3>Search Value</h3>
+    <input type="text" id="searchValue" placeholder="Enter value to search">
+    <button onclick="searchArray()">Search</button>
+
+    <h3>Array:</h3>
+    <p id="arrayDisplay">[ ]</p>
+
+    <h3>Result:</h3>
+    <p id="resultMsg"></p>
+
+    <script>
+        let arr = [];
+
+        function updateDisplay() {
+            document.getElementById("arrayDisplay").innerText =
+                "[ " + arr.join(", ") + " ]";
+        }
+
+        function addToArray() {
+            let val = document.getElementById("addValue").value;
+
+            if (val === "") {
+                alert("Please enter a value!");
+                return;
+            }
+
+            arr.push(val);
+            updateDisplay();
+
+            document.getElementById("addValue").value = "";
+            document.getElementById("resultMsg").innerText = "";
+        }
+
+        function searchArray() {
+            let val = document.getElementById("searchValue").value;
+
+            if (val === "") {
+                alert("Please enter a value to search!");
+                return;
+            }
+
+            let index = arr.indexOf(val);
+
+            if (index !== -1) {
+                document.getElementById("resultMsg").innerText =
+                    val + " found at index " + index;
+            } else {
+                document.getElementById("resultMsg").innerText =
+                    val + " not found in the array";
+            }
+        }
+
+        updateDisplay();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Add Two Numbers</h3>
+
+<input id="a" type="number" placeholder="Enter first number">
+<input id="b" type="number" placeholder="Enter second number">
+
+<button onclick="add()">Add</button>
+
+<p id="result"></p>
+
+<script>
+function add() {
+    let x = +a.value;
+    let y = +b.value;
+    result.innerText = "Sum = " + (x + y);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Sum of Digits</h3>
+
+<input id="num" type="number" placeholder="Enter an integer">
+<button onclick="sumDigits()">Find Sum</button>
+
+<p id="result"></p>
+
+<script>
+function sumDigits() {
+    let n = num.value, sum = 0;
+
+    for (let d of n)
+        sum += Number(d);
+
+    result.innerText = "Sum of digits = " + sum;
+}
+</script>
+
+</body>
+</html>

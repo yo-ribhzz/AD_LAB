@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Array Splice Test</h2>
+
+    <p>
+      Elements: <input type="text" id="raw" />
+      <button onclick="create()">Create</button>
+    </p>
+    <p>Start Index: <input type="number" id="idx" value="0" /></p>
+    <p>Delete Count: <input type="number" id="cnt" value="0" /></p>
+    <p>
+      Add: <input type="text" id="new" />
+      <button onclick="runSplice()">Splice</button>
+    </p>
+
+    <p>Current Array: [<span id="disp"></span>]</p>
+    <p id="msg"></p>
+
+    <script>
+      let arr = [];
+
+      function create() {
+        arr = document
+          .getElementById("raw")
+          .value.split(",")
+          .map((i) => i.trim())
+          .filter((i) => i);
+        update("Array created.");
+      }
+
+      function runSplice() {
+        let start = +document.getElementById("idx").value;
+        let count = +document.getElementById("cnt").value;
+        let items = document
+          .getElementById("new")
+          .value.split(",")
+          .map((i) => i.trim())
+          .filter((i) => i);
+
+        // Splice changes the original array
+        arr.splice(start, count, ...items);
+        update("Splice applied.");
+      }
+
+      function update(m) {
+        document.getElementById("disp").innerText = arr.join(", ");
+        document.getElementById("msg").innerText = m;
+      }
+    </script>
+  </body>
+</html>

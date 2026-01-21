@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Check Voting Eligibility</h3>
+
+<input id="age" type="number" placeholder="Enter age">
+<button onclick="check()">Check</button>
+
+<p id="result"></p>
+
+<script>
+function check() {
+    let a = +age.value;
+    result.innerText = a > 18
+        ? "Eligible for Voting"
+        : "Not Eligible for Voting";
+}
+</script>
+
+</body>
+</html>

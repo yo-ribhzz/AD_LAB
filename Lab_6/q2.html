@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Array Creation and Slice Test</h2>
+
+  <p>Enter Array Elements (comma separated):</p>
+  <input type="text" id="elements">
+  <button onclick="create()">Create Array</button>
+
+  <p>Start Index: <input type="text" id="start"></p>
+  <p>End Index: <input type="text" id="end"></p>
+  <button onclick="slice()">Slice Test</button>
+
+  <div id="result" style="margin-top:20px; font-weight:bold;"></div>
+
+  <script>
+    let arr = [];
+
+    function create() {
+      // Split input string into an array and show it
+      arr = document.getElementById('elements').value.split(',');
+      document.getElementById('result').innerText = "Array: [" + arr + "]";
+    }
+
+    function slice() {
+      let s = document.getElementById('start').value;
+      let e = document.getElementById('end').value;
+      
+      // Perform slice (original array 'arr' remains unchanged)
+      let sliced = arr.slice(s, e);
+      
+      document.getElementById('result').innerHTML = 
+        "Original: [" + arr + "] <br> Sliced: [" + sliced + "]";
+    }
+  </script>
+</body>
+</html>

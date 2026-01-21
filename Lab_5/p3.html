@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 3: Array Manipulation</title>
+</head>
+<body align="center">
+
+    <h1>Array Operations</h1>
+    
+    <p>Enter a value to add:</p>
+    <input type="text" id="inputValue" placeholder="e.g. 10">
+    <br><br>
+
+    <h3>Perform Operations:</h3>
+
+    <button onclick="pushValue()">Push (Add to End)</button>
+    <br><br>
+
+    <button onclick="popValue()">Pop (Remove from End)</button>
+    <br><br>
+
+    <button onclick="shiftValue()">Shift (Remove from Start)</button>
+    <br><br>
+
+    <button onclick="unshiftValue()">Unshift (Add to Start)</button>
+    
+    <br><br>
+
+    <h3>Current Array:</h3>
+    <p id="arrayDisplay" style="font-weight: bold; color: blue;">[]</p>
+
+    <script>
+
+        var myArray = [];
+
+        function updateDisplay() {
+            document.getElementById("arrayDisplay").innerHTML = "[" + myArray.join(", ") + "]";
+            document.getElementById("inputValue").value = ""; 
+        }
+
+
+        function pushValue() {
+            var val = document.getElementById("inputValue").value;
+            if (val !== "") {
+                myArray.push(val);
+                updateDisplay();
+            } 
+            else {
+                alert("Please enter a value to Push.");
+            }
+        }
+
+        function popValue() {
+            myArray.pop();
+            updateDisplay();
+        }
+
+        function shiftValue() {
+            myArray.shift();
+            updateDisplay();
+        }
+
+        function unshiftValue() {
+            var val = document.getElementById("inputValue").value;
+            if (val !== "") {
+                myArray.unshift(val);
+                updateDisplay();
+            } 
+            else {
+                alert("Please enter a value to Unshift.");
+            }
+        }
+    </script>
+
+</body>
+</html>

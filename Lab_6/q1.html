@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Search and Sort Operations</h2>
+
+    <p>
+      Add: <input type="number" id="val" /> <button onclick="add()">Add</button>
+    </p>
+    <p>
+      Search: <input type="number" id="sVal" />
+      <button onclick="search()">Search</button>
+    </p>
+
+    <button onclick="sortArr(1)">Sort Ascending</button>
+    <button onclick="sortArr(0)">Sort Descending</button>
+
+    <p>Array: [<span id="disp">9,5,4,2,1</span>]</p>
+    <p id="msg"></p>
+
+    <script>
+      let data = [9, 5, 4, 2, 1];
+
+      function add() {
+        let v = document.getElementById("val").value;
+        if (v) {
+          data.push(Number(v));
+          update("Added");
+        }
+      }
+
+      function search() {
+        let v = Number(document.getElementById("sVal").value);
+        let idx = data.indexOf(v);
+        document.getElementById("msg").innerText =
+          idx > -1 ? "Found at index " + idx : "Not found";
+      }
+
+      function sortArr(asc) {
+        data.sort((a, b) => (asc ? a - b : b - a));
+        update(asc ? "Sorted Ascending" : "Sorted Descending");
+      }
+
+      function update(m) {
+        document.getElementById("disp").innerText = data;
+        document.getElementById("msg").innerText = m;
+      }
+    </script>
+  </body>
+</html>
