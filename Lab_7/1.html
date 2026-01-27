@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>Email Validator</h1>
+    <input type="text" id="email" />
+    <button onclick="validate()">Validate</button>
+    <div id="result"></div>
+  </body>
+  <script>
+    function validate() {
+      let val = document.getElementById("email").value;
+      let regex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/i;
+      if (regex.test(val)) {
+        document.getElementById("result").innerHTML = "valid email";
+      } else {
+        document.getElementById("result").innerHTML = "invalid email";
+      }
+    }
+  </script>
+</html>

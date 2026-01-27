@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>Search and Replace</h1>
+    <textarea
+      id="message"
+      rows="4"
+      cols="50"
+      placeholder="Enter your message"
+    ></textarea>
+    <br /><br />
+    <input type="text" id="searchWord" placeholder="Enter word to search" />
+    <br /><br />
+    <button onclick="showMessage()">Show Message</button>
+    <button onclick="replaceWord()">Replace Word</button>
+    <p id="result"></p>
+    <script>
+      function showMessage() {
+        let msg = document.getElementById("message").value;
+        document.getElementById("result").innerText = msg;
+      }
+
+      function replaceWord() {
+        let msg = document.getElementById("message").value;
+        let search = document.getElementById("searchWord").value;
+
+        let replacement = prompt("Enter replacement word:");
+        if (replacement === null) return;
+
+        var regex = new RegExp(`\\b${search}\\b`, "gi");
+        let modified = msg.replace(regex, replacement);
+
+        document.getElementById("result").innerText = modified;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>Repalce Vowels</h1>
+
+    <input type="text" id="text" placeholder="enter string" />
+    <button onclick="replaceV()">replace</button>
+
+    <div id="result"></div>
+
+    <script>
+      function replaceV() {
+        let val = document.getElementById("text").value;
+        let modified = val.replace(/[aeiou]/gi, "*");
+
+        document.getElementById("result").innerHTML = modified;
+      }
+    </script>
+  </body>
+</html>

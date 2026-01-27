@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>Password Strength Checker</h1>
+
+    <input type="text" id="password" />
+    <button onclick="checkPassword()">Check</button>
+
+    <div id="result"></div>
+
+    <script>
+      function checkPassword() {
+        let pwd = document.getElementById("password").value;
+        let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+        document.getElementById("result").innerHTML =
+          regex.test(pwd) ? "Strong Password" : "Weak Password";
+      }
+    </script>
+  </body>
+</html>

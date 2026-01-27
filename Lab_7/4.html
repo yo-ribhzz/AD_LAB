@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>Word Presence Checker</h1>
+
+    <input type="text" id="text" placeholder="enter string" />
+    <button onclick="checkPresence()">Check</button>
+
+    <div id="result"></div>
+
+    <script>
+      function checkPresence() {
+        let val = document.getElementById("text").value;
+        let word = document.getElementById("word").value;
+        let regex = new RegExp(word, "i");
+
+        document.getElementById("result").innerHTML = regex.test(val)
+          ? "found"
+          : "not found";
+      }
+    </script>
+  </body>
+</html>
